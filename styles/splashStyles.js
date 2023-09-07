@@ -8,6 +8,13 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
 
+  splashContainer: {
+    flex: 1,
+    backgroundColor: 'white', 
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
 
   logo: {
     width: 250,

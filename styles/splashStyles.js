@@ -12,7 +12,12 @@ export default StyleSheet.create({
   logo: {
     width: 250,
     height: 250,
+    marginTop: 200
   },
 
-  
+  splashBackground:{
+    height: 850
+  }
+
+
 });

@@ -14,7 +14,9 @@ const SplashScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
         <View style={splashStyles.container}>
-            <Image source={'../../asset/images/hospytaRealLogo.svg'} style={splashStyles.logo} />
+           <View style={splashStyles.splashBackground}>
+                <Image source={'../../asset/images/hospytaRealLogo.svg'} style={splashStyles.logo}/>
+           </View>
         </View>
     </SafeAreaView>
   );

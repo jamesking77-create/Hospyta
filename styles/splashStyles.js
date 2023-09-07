@@ -19,7 +19,7 @@ export default StyleSheet.create({
   logo: {
     width: 250,
     height: 250,
-    marginTop: 200
+    marginTop: 180
   },
 
   splashBackground:{

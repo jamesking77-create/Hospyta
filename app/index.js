@@ -1,18 +1,20 @@
-import { View, ScrollView, SafeAreaView } from "react-native";
-import { useState } from "react";
-import { Stack, useRouter } from "expo-router";
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
 import SplashScreen from "../components/screens/splashsreen";
+import Splash from "../components/screens/splash";
 
+const Stack = createStackNavigator();
 
-const Home = () => {
-  const router = useRouter();
-
-    return (
-        <SafeAreaView >
-        <SplashScreen/>
-        </SafeAreaView>
-    );
-
+const App = () => {
+  return (
+   
+      <Stack.Navigator initialRouteName="SplashScreen" options={{ headerShown: false }}>
+        <Stack.Screen name="SplashScreen" options={{ headerShown: false }} component={SplashScreen} />
+        <Stack.Screen name="Splash" options={{ headerShown: false }} component={Splash} />
+      </Stack.Navigator>
+  
+  );
 };
 
-export default Home;
+export default App;

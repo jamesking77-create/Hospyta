@@ -2,8 +2,7 @@ import { View, ScrollView, SafeAreaView } from "react-native";
 import { useState } from "react";
 import { Stack, useRouter } from "expo-router";
 import SplashScreen from "../components/screens/splashsreen";
-import { ScreenStack } from "react-native-screens";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+
 
 const Home = () => {
   const router = useRouter();

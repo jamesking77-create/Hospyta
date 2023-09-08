@@ -10,7 +10,7 @@ const Splash = () => {
     const navigation = useNavigation();
     useEffect(() => {
         const timer = setTimeout(() => {
-          navigation.replace('FirstOnBoard'); 
+          navigation.replace('Onboarding'); 
         }, 5000);
         return () => clearTimeout(timer);
       }, [navigation]);

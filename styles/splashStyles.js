@@ -88,7 +88,6 @@ export default StyleSheet.create({
     color: 'white',
     fontSize: 26,
     textAlign: 'left',
-    font: 'Poppins',
     marginTop: 220,
     marginLeft:50,
     fontWeight: 450,

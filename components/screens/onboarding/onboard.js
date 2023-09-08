@@ -10,9 +10,20 @@ import {
 
 import splashStyles from "../../../styles/splashStyles";
 import { LinearGradient } from "expo-linear-gradient";
+import { useNavigation } from '@react-navigation/native';
 
 const FirstOnBoard = ({ item }) => {
   const { width } = useWindowDimensions();
+  const navigation = useNavigation();
+
+  const goToRegisterPage = () => {
+    navigation.navigate('RegisterPage');
+  };
+
+  const goToLoginPage = () => {
+    navigation.navigate('LoginPage');
+  };
+
 
   return (
    
@@ -26,10 +37,10 @@ const FirstOnBoard = ({ item }) => {
           </View>
           <Text style={splashStyles.paragraph}>{item.description}</Text>
           <Text style={splashStyles.caption}>{item.caption}</Text>
-          <TouchableOpacity style={splashStyles.signInButton}>
+          <TouchableOpacity style={splashStyles.signInButton} onPress={goToRegisterPage}>
             <Text style={splashStyles.buttonText}>Sign Up</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={splashStyles.signUpButton}>
+          <TouchableOpacity style={splashStyles.signUpButton} onPress={goToLoginPage}>
             <Text style={splashStyles.buttonText}>Sign In</Text>
           </TouchableOpacity>
         </LinearGradient>

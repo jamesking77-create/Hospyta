@@ -1,7 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet,FlatList} from 'react-native';
 import slides from "../../../styles/slides";
-import FirstOnBoard from "./onboard1";
+import FirstOnBoard from "./onboard";
 
 const Onboarding =()=>{
     return(
@@ -20,8 +20,6 @@ const Onboarding =()=>{
 const style = StyleSheet.create({
     container:{
         flex: 1,
-        justify: "center",
-        alignItems: "center"
     }
 })
 

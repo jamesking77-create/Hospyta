@@ -19,7 +19,7 @@ export default StyleSheet.create({
   logo: {
     width: 250,
     height: 250,
-    marginTop: 180
+    marginTop: 150
   },
 
   splashBackground:{
@@ -61,8 +61,8 @@ export default StyleSheet.create({
     backgroundColor: 'blue', 
     borderRadius: 8,
     marginHorizontal: 5,
-    maxHeight:42,
-    marginTop: 80,
+    maxHeight:88,
+    marginTop: 40,
     width:330
   },
 
@@ -74,7 +74,7 @@ export default StyleSheet.create({
     border: ' solid 2pt #fff',
     borderRadius: 8,
     marginHorizontal: 5,
-    maxHeight:42,
+    maxHeight:88,
     marginTop: 20,
     width:330
   },
@@ -91,6 +91,7 @@ export default StyleSheet.create({
     marginTop: 220,
     marginLeft:50,
     fontWeight: 450,
+    height: 180
     
     
 

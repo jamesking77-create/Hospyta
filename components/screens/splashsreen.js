@@ -4,6 +4,7 @@ import { View, Image, SafeAreaView } from 'react-native';
 import splashStyles from '../../styles/splashStyles';
 
 const SplashScreen = ({ navigation }) => {
+    
   useEffect(() => {
     const timer = setTimeout(() => {
       navigation.replace('Splash'); 

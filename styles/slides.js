@@ -1,7 +1,7 @@
 export default [
     {
         id: 1,
-        description:"Convenient TeleHealth: \nVirtual Consultant \nAndfollow-up... \nAnytime, Anywhere",
+        description:"Convenient TeleHealth: \nVirtual Consultant \nAnd follow-up... \nAnytime, Anywhere",
         caption: "With Hospyta",
         image: "../asset/images/image1.svg",
         logo: '../asset/images/textLogo.svg'

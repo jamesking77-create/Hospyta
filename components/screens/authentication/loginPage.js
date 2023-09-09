@@ -9,20 +9,27 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import registrationStyles from "../../../styles/registrationStyles";
+import { useNavigation } from '@react-navigation/native'
 
 const LoginPage = () => {
+  const navigation = useNavigation();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
-  const handleRegister = () => {};
+  const handleLogin = () => {
+    navigation.navigate('HomePage')
+  };
+  const handleGoBack = () => {
+    navigation.goBack(); 
+  };
 
   return (
     <View style={{ flex: 1, paddingHorizontal: 20, paddingTop: 20 }}>
       <TouchableOpacity
-        onPress={() => navigation.goBack('FirstOnBoard')}
+        onPress={handleGoBack}
         style={{
           border: "solid 0.5pt grey ",
           borderRadius: 3,
@@ -90,7 +97,7 @@ const LoginPage = () => {
       </View>
 
       <TouchableOpacity
-        onPress={handleRegister}
+        onPress={handleLogin}
         style={registrationStyles.registerBotton}
       >
         <Text style={{ color: "white", fontSize: 18 }}>sign in</Text>

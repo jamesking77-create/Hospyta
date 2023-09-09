@@ -6,7 +6,7 @@ import Splash from "../components/screens/splash";
 import Onboarding from "../components/screens/onboarding/onboarding ";
 import RegisterPage from "../components/screens/authentication/registrationPage";
 import LoginPage from "../components/screens/authentication/loginPage";
-
+import HomePage from "../components/screens/pages/homePage";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +19,7 @@ const App = () => {
         <Stack.Screen name="Onboarding" options={{ headerShown: false }} component={Onboarding} />
         <Stack.Screen name="RegisterPage" options={{ headerShown: false }} component={RegisterPage} />
         <Stack.Screen name="LoginPage" options={{ headerShown: false }} component={LoginPage} />
+        <Stack.Screen name="HomePage" options={{ headerShown: false }} component={HomePage} />
       </Stack.Navigator>
   
   );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   View,
   Text,
@@ -7,12 +8,15 @@ import {
   Image,
   Switch,
   FlatList,
-  ImageBackground,
 } from "react-native";
+
 import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import { homePageStyle } from "../../../styles/homePageStyle";
-import Icon from "react-native-vector-icons/FontAwesome";
 import Appointment from "../../navigations/appointments";
+import CommunityFeed from "../../navigations/communityFeed";
+import MedStuff from "../../navigations/medStuff";
+import ShopMeds from "../../navigations/shopMeds";
+import NavigationBar from "../../navigations/navigationBars";
 
 const HomePage = () => {
   const [activePage, setActivePage] = useState(0);
@@ -21,48 +25,6 @@ const HomePage = () => {
     { key: "1", backgroundColor: "#643FDB" },
     { key: "2", backgroundColor: "#FCC500" },
     { key: "3", backgroundColor: "lightgreen" },
-  ];
-
-  const communityFeed = [
-    {
-      key: "1",
-      backgroundColor: "#fff",
-      source: "../../../asset/images/hands.svg",
-      product: 'Temperature checker',
-      price: '5000'
-    },
-    {
-      key: "2",
-      backgroundColor: "#fff",
-      source: "../../../asset/images/barSoap.svg",
-      product: 'statoscope',
-      price: '15000'
-    },
-    { key: "3", backgroundColor: "#fff" },
-  ];
-
-  const shopMedicine = [
-    {
-      key: "1",
-      backgroundColor: "#fff",
-      source: "../../../asset/images/meds1.svg",
-      product: 'panadol (50mg) 200ta',
-      price: '5000'
-    },
-    {
-      key: "2",
-      backgroundColor: "#fff",
-      source: "../../../asset/images/meds2.svg",
-      product: 'tooth ache sooth med',
-      price: '15000'
-    },
-    {
-      key: "3",
-      backgroundColor: "#fff",
-      source: "../../../asset/images/barSoap.svg",
-      product: 'panadol (50mg) 200ta',
-      price: '5000'
-    },
   ];
 
   const handleScrollEnd = (event) => {
@@ -158,170 +120,15 @@ const HomePage = () => {
             style={homePageStyle.arrowIcon}
           />
         </View>
-
-        <View style={homePageStyle.communtyFeedBox}>
-          <Text style={homePageStyle.communityText}>Community Feed</Text>
-          <View style={{ marginTop: 8, marginLeft: 70 }}>
-            <Text style={{ color: "#6798E1", fontSize: 15 }}>View All</Text>
-          </View>
-        </View>
       </View>
 
-      <FlatList
-        horizontal
-        data={communityFeed}
-        renderItem={({ item }) => (
-          <ImageBackground
-            source={item.source}
-            style={[
-              homePageStyle.feed,
-              {
-                backgroundColor: item.backgroundColor,
-                flex: 1,
-                resizeMode: "cover",
-              },
-            ]}
-          ></ImageBackground>
-        )}
-        keyExtractor={(item) => item.key}
-        onMomentumScrollEnd={handleScrollEnd}
-      />
+      <CommunityFeed />
 
-      {/* <TouchableOpacity onPress={()=> navigation.navigate('Home') }> */}
-      <View style={{ width: "100%", height: "10%", flexDirection: "row" }}>
-        <Image
-          source={"../../../asset/icons/home.svg"}
-          style={{ height: 30, width: 30, marginLeft: 50 }}
-        />
-        <Image
-          source={"../../../asset/icons/calendar.svg"}
-          style={{ height: 30, width: 30, marginLeft: 40 }}
-        />
-        <Image
-          source={"../../../asset/icons/users.svg"}
-          style={{
-            height: 30,
-            width: 30,
-            height: 30,
-            width: 30,
-            marginLeft: 40,
-          }}
-        />
-        <Image
-          source={"../../../asset/icons/shop.svg"}
-          style={{
-            height: 30,
-            width: 30,
-            height: 30,
-            width: 30,
-            marginLeft: 40,
-          }}
-        />
-        <Image
-          source={"../../../asset/icons/profile.svg"}
-          style={{
-            height: 30,
-            width: 30,
-            height: 30,
-            width: 30,
-            marginLeft: 40,
-          }}
-        />
-      </View>
+      <NavigationBar />
 
-      <View style={homePageStyle.communtyFeedBox}>
-        <Text style={{ marginLeft: 30, fontWeight: "bold" }}>
-          Shop for medical stuff
-        </Text>
-        <View style={{ marginTop: 8, marginLeft: 70 }}>
-          <Text style={{ color: "#6798E1", fontSize: 15, marginLeft: 50 }}>
-            View All
-          </Text>
-        </View>
-      </View>
+      <MedStuff />
 
-      <FlatList
-        horizontal
-        data={communityFeed}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={[
-              homePageStyle.med,
-              {
-                backgroundColor: item.backgroundColor,
-                flex: 1,
-              },
-            ]}
-          >
-            <Image
-              source={"../../../asset/images/tempChecker.svg"}
-              style={{ width: 100, height: 130, marginTop: 20, marginLeft: 32 }}
-            />
-            <Text style={{ fontSize: 10, marginLeft: 30, marginTop: 10 }}>
-           {item.product}
-            </Text>
-            <Text
-              style={{
-                fontSize: 15,
-                marginLeft: 30,
-                marginTop: 5,
-                fontWeight: "bold",
-              }}
-            >
-            {item.price}
-            </Text>
-          </TouchableOpacity>
-        )}
-        keyExtractor={(item) => item.key}
-        onMomentumScrollEnd={handleScrollEnd}
-      />
-
-      <View style={homePageStyle.communtyFeedBox}>
-        <Text style={{ marginLeft: 30, fontWeight: "bold" }}>
-          Shop For Medicines
-        </Text>
-        <View style={{ marginTop: 8, marginLeft: 70 }}>
-          <Text style={{ color: "#6798E1", fontSize: 15, marginLeft: 50 }}>
-            View All
-          </Text>
-        </View>
-      </View>
-
-      <FlatList
-        horizontal
-        data={shopMedicine}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={[
-              homePageStyle.med,
-              {
-                backgroundColor: item.backgroundColor,
-                flex: 1,
-              },
-            ]}
-          >
-            <Image
-              source={item.source}
-              style={{ width: 100, height: 130, marginTop: 20, marginLeft: 32 }}
-            />
-            <Text style={{ fontSize: 10, marginLeft: 30, marginTop: 10 }}>
-             {item.product}
-            </Text>
-            <Text
-              style={{
-                fontSize: 15,
-                marginLeft: 30,
-                marginTop: 5,
-                fontWeight: "bold",
-              }}
-            >
-              {item.price}
-            </Text>
-          </TouchableOpacity>
-        )}
-        keyExtractor={(item) => item.key}
-        onMomentumScrollEnd={handleScrollEnd}
-      />
+      <ShopMeds />
     </ScrollView>
   );
 };

@@ -148,7 +148,8 @@ export const homePageStyle = StyleSheet.create({
 
   communtyFeedBox:{
     width: '100%',
-    flexDirection: 'row',    
+    flexDirection: 'row',
+    marginTop: 40    
   },
 
   communityText:{

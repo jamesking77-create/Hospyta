@@ -61,7 +61,7 @@ export default StyleSheet.create({
     backgroundColor: 'blue', 
     borderRadius: 8,
     marginHorizontal: 5,
-    maxHeight:88,
+    maxHeight:48,
     marginTop: 40,
     width:330
   },
@@ -74,7 +74,7 @@ export default StyleSheet.create({
     border: ' solid 2pt #fff',
     borderRadius: 8,
     marginHorizontal: 5,
-    maxHeight:88,
+    maxHeight:48,
     marginTop: 20,
     width:330
   },

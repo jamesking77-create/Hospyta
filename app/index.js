@@ -1,3 +1,4 @@
+// App.js (or wherever you have your App component)
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -12,16 +13,14 @@ const Stack = createStackNavigator();
 
 const App = () => {
   return (
-   
-      <Stack.Navigator initialRouteName="SplashScreen" options={{ headerShown: false }}>
-        <Stack.Screen name="SplashScreen" options={{ headerShown: false }} component={SplashScreen} />
-        <Stack.Screen name="Splash" options={{ headerShown: false }} component={Splash} />
-        <Stack.Screen name="Onboarding" options={{ headerShown: false }} component={Onboarding} />
-        <Stack.Screen name="RegisterPage" options={{ headerShown: false }} component={RegisterPage} />
-        <Stack.Screen name="LoginPage" options={{ headerShown: false }} component={LoginPage} />
-        <Stack.Screen name="HomePage" options={{ headerShown: false }} component={HomePage} />
-      </Stack.Navigator>
-  
+    <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="SplashScreen" component={SplashScreen} />
+      <Stack.Screen name="Splash" component={Splash} />
+      <Stack.Screen name="Onboarding" component={Onboarding} />
+      <Stack.Screen name="RegisterPage" component={RegisterPage} />
+      <Stack.Screen name="LoginPage" component={LoginPage} />
+      <Stack.Screen name="HomePage" component={HomePage} />
+    </Stack.Navigator>
   );
 };
 

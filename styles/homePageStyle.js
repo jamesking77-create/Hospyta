@@ -72,6 +72,7 @@ export const homePageStyle = StyleSheet.create({
     width: 150,
     height: 220,
     marginLeft: 30,
+    marginBottom: 30,
     marginTop: 20,
     borderRadius:15,
     shadowColor: '#000',

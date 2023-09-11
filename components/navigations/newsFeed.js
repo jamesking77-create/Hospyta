@@ -9,28 +9,21 @@ import {
 } from "react-native";
 import { homePageStyle } from "../../styles/homePageStyle";
 
-const MedStuff = () => {
-  const shopMedicine = [
+const NewsFeed = () => {
+  const newsFeed = [
     {
       key: "1",
       backgroundColor: "#fff",
-      source: "../../../asset/images/tempChecker.svg",
-      product: "Temperature Checker",
-      price: "5000",
+      source: "../../asset/images/lady.svg",
+      channel: "Word/news",
+      header: "Getting the upper\n hand on asthma\n allergy",
     },
     {
       key: "2",
       backgroundColor: "#fff",
-      source: "../../../asset/images/tempChecker.svg",
-      product: "Statoscope",
-      price: "15000",
-    },
-    {
-      key: "3",
-      backgroundColor: "#fff",
-      source: "../../../asset/images/tempChecker.svg",
-      product: "panadol (50mg) 200ta",
-      price: "5000",
+      source: "../../asset/images/skincare.svg",
+      channel: "World/news",
+      header: "Skin cancer prevention\n 5 ways to protect\n yourself",
     },
   ];
 
@@ -43,9 +36,9 @@ const MedStuff = () => {
     <View>
       <View style={homePageStyle.communtyFeedBox}>
         <Text style={{ marginLeft: 30, fontWeight: "bold" }}>
-          Shop for medical stuff
+          News Feed
         </Text>
-        <View style={{ marginTop: 5, marginLeft: 70 }}>
+        <View style={{ marginTop: 8, marginLeft: 70 }}>
           <Text style={{ color: "#6798E1", fontSize: 15, marginLeft: 50 }}>
             View All
           </Text>
@@ -53,12 +46,11 @@ const MedStuff = () => {
       </View>
 
       <FlatList
-        horizontal
-        data={shopMedicine}
+        data={newsFeed}
         renderItem={({ item }) => (
           <TouchableOpacity
             style={[
-              homePageStyle.med,
+              homePageStyle.news,
               {
                 backgroundColor: item.backgroundColor,
                 flex: 1,
@@ -67,21 +59,35 @@ const MedStuff = () => {
           >
             <Image
               source={item.source}
-              style={{ width: 100, height: 130, marginTop: 20, marginLeft: 32 }}
-            />
-            <Text style={{ fontSize: 10, marginLeft: 30, marginTop: 10 }}>
-              {item.product}
-            </Text>
-            <Text
               style={{
-                fontSize: 15,
-                marginLeft: 30,
-                marginTop: 5,
-                fontWeight: "bold",
+                width: 100,
+                height: 100,
+                marginTop: 20,
+                marginLeft: 12,
+                borderRadius: 12,
               }}
-            >
-              {item.price}
-            </Text>
+            />
+            <View>
+              <Text
+                style={{
+                  fontSize: 15,
+                  marginLeft: 15,
+                  marginTop: 30,
+                  color: "gray",
+                }}
+              >
+                {item.channel}
+              </Text>
+              <Text
+                style={{
+                  fontSize: 15,
+                  marginLeft: 15,
+                  marginTop: 5,
+                }}
+              >
+                {item.header}
+              </Text>
+            </View>
           </TouchableOpacity>
         )}
         keyExtractor={(item) => item.key}
@@ -90,4 +96,4 @@ const MedStuff = () => {
     </View>
   );
 };
-export default MedStuff;
+export default NewsFeed;

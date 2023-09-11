@@ -28,7 +28,7 @@ const CommunityFeed =()=>{
         const pageIndex = Math.floor(contentOffsetX / screenWidth);
         setActivePage(pageIndex);
       };
-      
+
     return(
         <View>
 
@@ -43,7 +43,7 @@ const CommunityFeed =()=>{
         horizontal
         data={communityFeed}
         renderItem={({ item }) => (
-          <ImageBackground
+          <Image
             source={item.source}
             style={[
               homePageStyle.feed,
@@ -51,9 +51,10 @@ const CommunityFeed =()=>{
                 backgroundColor: item.backgroundColor,
                 flex: 1,
                 resizeMode: "cover",
+                borderRadius: 12
               },
             ]}
-          ></ImageBackground>
+          ></Image>
         )}
         keyExtractor={(item) => item.key}
         onMomentumScrollEnd={handleScrollEnd}

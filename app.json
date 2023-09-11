@@ -8,6 +8,17 @@
       "expo-router"
     ],
     "name": "Hospyta",
-    "slug": "Hospyta"
+    "slug": "Hospyta",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f9cd72b5-4007-4f4c-a6b2-2ec20000a487"
+      }
+    },
+    "android": {
+      "package": "com.jking.Hospyta"
+    }
   }
 }

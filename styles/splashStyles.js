@@ -63,7 +63,7 @@ export default StyleSheet.create({
     marginHorizontal: 5,
     maxHeight:48,
     marginTop: 40,
-    width:330
+    width:'93%'
   },
 
   signUpButton: {
@@ -76,7 +76,7 @@ export default StyleSheet.create({
     marginHorizontal: 5,
     maxHeight:48,
     marginTop: 20,
-    width:330
+    width:'93%'
   },
 
   buttonText: {

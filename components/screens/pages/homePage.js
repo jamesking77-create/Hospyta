@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useRef } from "react";
 import {
   View,
   Text,
@@ -9,7 +8,6 @@ import {
   Switch,
   FlatList,
 } from "react-native";
-
 import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import { homePageStyle } from "../../../styles/homePageStyle";
 import Appointment from "../../navigations/appointments";
@@ -17,9 +15,15 @@ import CommunityFeed from "../../navigations/communityFeed";
 import MedStuff from "../../navigations/medStuff";
 import ShopMeds from "../../navigations/shopMeds";
 import NavigationBar from "../../navigations/navigationBars";
+import PopularDrugs from "../../navigations/popularDrugs";
+import NewsFeed from "../../navigations/newsFeed";
+import * as Animatable from "react-native-animatable";
+import Sidebar from "../../navigations/sidebar";
 
 const HomePage = () => {
   const [activePage, setActivePage] = useState(0);
+  const drawerRef = useRef(null);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
 
   const horizontalData = [
     { key: "1", backgroundColor: "#643FDB" },
@@ -31,6 +35,10 @@ const HomePage = () => {
     const contentOffsetX = event.nativeEvent.contentOffset.x;
     const pageIndex = Math.floor(contentOffsetX / screenWidth);
     setActivePage(pageIndex);
+  };
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
   };
 
   return (
@@ -49,12 +57,25 @@ const HomePage = () => {
         <TouchableOpacity style={homePageStyle.iconContainer}>
           <MaterialIcons name="notifications" size={24} color="black" />
         </TouchableOpacity>
-        <TouchableOpacity style={homePageStyle.iconContainer}>
+        <TouchableOpacity
+          onPress={toggleSidebar} 
+          style={homePageStyle.iconContainer}
+        >
           <Image
-            source={"../../../asset/icons/menu.png"}
+            source={require("../../../asset/icons/menu.png")} 
             style={{ width: 30, height: 30 }}
           />
         </TouchableOpacity>
+
+      
+        <Animatable.View
+          ref={drawerRef}
+          animation={sidebarVisible ? "slideInRight" : "slideOutRight"} 
+          duration={300}
+          style={{ zIndex: -1 }} 
+        >
+          <Sidebar onClose={toggleSidebar} isVisible={sidebarVisible} />
+        </Animatable.View>
       </View>
       <FlatList
         horizontal
@@ -129,6 +150,10 @@ const HomePage = () => {
       <MedStuff />
 
       <ShopMeds />
+
+      <PopularDrugs />
+
+      <NewsFeed />
     </ScrollView>
   );
 };

@@ -3,10 +3,20 @@
 import { StyleSheet } from 'react-native';
 
 export const homePageStyle = StyleSheet.create({
+
+  sidebar: {
+    flex: 1,
+    backgroundColor: 'white',
+    height: 300,
+    width: 300
+  },
+
+
+
   container: {
     flex: 1,
     backgroundColor: 'white',
-    height: 5000
+    height: 5000,
   
   },
   topSection: {
@@ -14,6 +24,7 @@ export const homePageStyle = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     paddingTop: 20,
+    zIndex: +1
   },
 
   textContainer:{
@@ -85,6 +96,26 @@ export const homePageStyle = StyleSheet.create({
     },
   },
 
+
+  news:{
+    flexDirection: 'row',
+    padding: 10,
+    width: 300,
+    height: 220,
+    marginLeft: 30,
+    marginBottom: 30,
+    marginTop: 20,
+    borderRadius:15,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: {
+      width: 3,
+      height: 3,
+      shadowRadius: 4,
+      elevation: 3, 
+    },
+  },
+
   paginationDots: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -105,6 +136,7 @@ export const homePageStyle = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
     flex: 1,
+    marginTop: -83
   },
   bottomBox: {
     width: '80%',
@@ -150,6 +182,12 @@ export const homePageStyle = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     marginTop: 40    
+  },
+
+  newsFeed:{
+    width: 800,
+    flexDirection: 'row',
+    marginTop: 40 
   },
 
   communityText:{
